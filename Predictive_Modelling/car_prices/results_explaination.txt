@@ -1,0 +1,15 @@
+The project was done in order to learn and get familiar with the concepts of:
+MultiVariate regression
+Normalisation of data
+Pandas - dataframes
+OLS - Ordinary Least Squares Regression
+
+
+Explanation of the results
+
+The table of coefficients above gives us the values to plug into an equation of form:
+    B0 + B1 * Mileage + B2 * model_ord + B3 * doors
+
+As can be seen from the results.txt file, the values of the coefficients of the three variables that we took for analysis has come. In that, one can clearly see that Cylinder impacts the car_prices the most. 
+
+It is assumed that there is not correlation amongst the different variables themselves in order for the Multivariate Regression to work.
