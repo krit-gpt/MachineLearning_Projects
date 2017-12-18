@@ -1,0 +1,1 @@
+The repository consists of various projects that I completed as part of numerous online courses that I did.  These are primarily done in order to understand various concepts in Machine Learning, Data Science and associated fields.
