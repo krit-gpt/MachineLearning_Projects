@@ -1,0 +1,35 @@
+                                                    (rating, size)  \
+title                                                                
+Star Wars (1977)                                               584   
+Empire Strikes Back, The (1980)                                368   
+Return of the Jedi (1983)                                      507   
+Raiders of the Lost Ark (1981)                                 420   
+Austin Powers: International Man of Mystery (1997)             130   
+Sting, The (1973)                                              241   
+Indiana Jones and the Last Crusade (1989)                      331   
+Pinocchio (1940)                                               101   
+Frighteners, The (1996)                                        115   
+L.A. Confidential (1997)                                       297   
+Wag the Dog (1997)                                             137   
+Dumbo (1941)                                                   123   
+Bridge on the River Kwai, The (1957)                           165   
+Philadelphia Story, The (1940)                                 104   
+Miracle on 34th Street (1994)                                  101   
+
+                                                    (rating, mean)  similarity  
+title                                                                           
+Star Wars (1977)                                          4.359589    1.000000  
+Empire Strikes Back, The (1980)                           4.206522    0.748353  
+Return of the Jedi (1983)                                 4.007890    0.672556  
+Raiders of the Lost Ark (1981)                            4.252381    0.536117  
+Austin Powers: International Man of Mystery (1997)        3.246154    0.377433  
+Sting, The (1973)                                         4.058091    0.367538  
+Indiana Jones and the Last Crusade (1989)                 3.930514    0.350107  
+Pinocchio (1940)                                          3.673267    0.347868  
+Frighteners, The (1996)                                   3.234783    0.332729  
+L.A. Confidential (1997)                                  4.161616    0.319065  
+Wag the Dog (1997)                                        3.510949    0.318645  
+Dumbo (1941)                                              3.495935    0.317656  
+Bridge on the River Kwai, The (1957)                      4.175758    0.316580  
+Philadelphia Story, The (1940)                            4.115385    0.314272  
+Miracle on 34th Street (1994)                             3.722772    0.310921  
