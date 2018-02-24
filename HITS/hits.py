@@ -64,3 +64,23 @@ for i in g_orig.graph.values():
 #     print i
 # for i in g_rev.graph.keys():
 #     print i
+    
+'''
+Now simply, for calculating the hubs score, we can get all the 
+authorities a hub points to by g_orig.graph[source_orig[i][j][0]]
+To calculate the authorities score, we can get all the hubs from the
+g_rev.graph[source_rev[i][j][0]]
+'''
+summ = 0
+# for j in range(len(g_orig.graph[source_orig[i]])):
+#     summ += dict_auth[g_orig.graph[source_orig[i][j][0]]]
+# dict_hubs[i] = summ
+for i in range(10):
+    for k,v in g_orig.graph.items():
+        summ = 0
+        for dest in v:
+            summ+= dict_auth[dest[0]]
+        dict_hubs[k]=summ
+        
+#     #normalising the hub scores
+#     for k,v in dict_hubs.items():
