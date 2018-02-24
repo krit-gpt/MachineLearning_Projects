@@ -7,7 +7,7 @@ destination_orig = []
 source_rev = []
 weight = []
 
-with open('test.json') as data_file:
+with open('HITS.json') as data_file:
     for line in data_file:
         data = json.loads(line)
         if data['user']['id'] != data['retweeted_status']['user']['id']:
@@ -39,13 +39,13 @@ for i in range(len(source_orig)):
 #     print(k,v)
     
 # print("-----------------------------------------------------")
-# for i in range(10):
-#     print(g_rev.graph[source_rev[i]])
+for i in range(10):
+    print(g_rev.graph[source_rev[i]])
 #destination - g.graph[i][0][0]
 #weights - g.graph[i][0][1]
         
 
-
+# your code here
 # Make a dictionary each for storing the hubs score and another for storing
 # the authorities score.
 dict_hubs= {}
@@ -62,8 +62,8 @@ for i in g_orig.graph.values():
 #print(dict_auth)
 # for i in g_orig.graph.keys():
 #     print i
-# for i in g_rev.graph.keys():
-#     print i
+# # for i in g_rev.graph.keys():
+# #     print i
     
 '''
 Now simply, for calculating the hubs score, we can get all the 
@@ -75,26 +75,42 @@ summ = 0
 # for j in range(len(g_orig.graph[source_orig[i]])):
 #     summ += dict_auth[g_orig.graph[source_orig[i][j][0]]]
 # dict_hubs[i] = summ
-for i in range(10):
+for i in range(200):
     for k,v in g_orig.graph.items():
         summ = 0
         for dest in v:
-            summ+= dict_auth[dest[0]]
+            if dest[0] in dict_auth:
+                summ += dict_auth[dest[0]]
         dict_hubs[k]=summ
         
-#     #normalising the hub scores
-#     for k,v in dict_hubs.items():
-       
+    #normalising the hub scores
+    total = 0
+    for k,v in dict_hubs.items():
+        total += v**2
+    
+    for k,v in dict_hubs.items():
+        dict_hubs[k] = v/(total**0.5)
     for k,v in g_rev.graph.items():
         summ = 0
         for dest in v:
-            summ += dict_hubs[dest[0]]
+            if dest[0] in dict_hubs:
+                summ += dict_hubs[dest[0]]
         dict_auth[k]= summ
-print(dict_hubs)
-print(dict_auth)
-'''
-Normalize the values by dividing each Hub score by square root of 
-the sum of the squares of all Hub scores, 
-and dividing each Authority score by square root of 
-the sum of the squares of all Authority scores.
-'''
+    
+    total = 0
+    for k,v in dict_auth.items():
+        total += v**2
+    
+    for k,v in dict_auth.items():
+        dict_auth[k] = v/(total**0.5)
+        
+sorted_hubs = sorted(dict_hubs.items(), key= lambda x:x[1], reverse=True)[:10]
+sorted_auth = sorted(dict_auth.items(), key=lambda x:x[1], reverse=True)[:10]
+print("Top 10 Hubs Scores --")
+for i in range(len(sorted_hubs)):
+    print str(i+1) + '.' + ' ' + str(sorted_hubs[i][0]) + '  '+  str(sorted_hubs[i][1]) 
+    
+print("\n")
+print("Top 10 Authorities Scores --")
+for i in range(len(sorted_hubs)):
+    print str(i+1) + '.' + ' ' + str(sorted_auth[i][0]) + '  '+  str(sorted_auth[i][1])
