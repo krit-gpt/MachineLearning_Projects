@@ -84,3 +84,17 @@ for i in range(10):
         
 #     #normalising the hub scores
 #     for k,v in dict_hubs.items():
+       
+    for k,v in g_rev.graph.items():
+        summ = 0
+        for dest in v:
+            summ += dict_hubs[dest[0]]
+        dict_auth[k]= summ
+print(dict_hubs)
+print(dict_auth)
+'''
+Normalize the values by dividing each Hub score by square root of 
+the sum of the squares of all Hub scores, 
+and dividing each Authority score by square root of 
+the sum of the squares of all Authority scores.
+'''
